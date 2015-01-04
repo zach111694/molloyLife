@@ -1,5 +1,4 @@
-#twitter-widget-0 iframe[style]{
-    min-width: 100% !important;
+#twitter-widget-0{
     max-width: 100% !important;
     width: 100% !important;
 }
