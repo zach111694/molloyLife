@@ -3,13 +3,18 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %></title>
-    <link rel='stylesheet' href='/css/bootstrap.css'/>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/navbarstyle.css" rel="stylesheet">
 </head>
-<body style="background-color: white; color: #000000">
+<body>
 
-<%-include navbar.ejs %>
+<%- include navbar.ejs %>
 
-<div class="container-fluid" style="background-color: #843534">
+<div class="container-fluid molloy-themed">
     <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="http://www.flickr.com/photos/90807967@N08/15845527337/player/"
                 width="640" height="480" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen

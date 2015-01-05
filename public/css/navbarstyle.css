@@ -1,0 +1,23 @@
+#navbar-mainbar {
+    background-color: #A31919;
+    margin-bottom: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+#navbar-logo {
+    vertical-align: middle;
+    height: 40px;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+#navbar-text {
+    color: #ffffff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+}

@@ -5,7 +5,10 @@
     <title><%= title %></title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/navbarstyle.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,8 +17,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body style="background-color: white; color: #000000">
-<%-include navbar.ejs %>
+<body>
+<%- include navbar.ejs %>
 
 <div class="container-fluid">
     <div class="embed-responsive embed-responsive-16by9">
@@ -32,8 +35,8 @@
             }(document, "script", "twitter-wjs");</script>
     </div>
 </div>
-<div class="container-fluid" style="position: relative;">
-    <div class="container-fluid text-center btn-toolbar" style="color: #000000">
+<div class="container-fluid image-container">
+    <div class="container-fluid text-center btn-toolbar">
         <div class="btn-group btn-group-justified" role="group">
             <a class="btn" href="photos">Photos</a>
             <a class="btn" href="videos">Videos</a>
@@ -45,9 +48,9 @@
             <a class="btn" href="socialmedia">Social Media</a>
         </div>
     </div>
-    <img src="/images/molloyLifeButtons.jpg"
-         style="position: absolute; left: 0px; top: 0px; width: 100%; z-index: -1; border-radius: 4px"/>
+    <img src="/images/molloyLifeButtons.jpg" class="bgButtonImage"/>
 </div>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

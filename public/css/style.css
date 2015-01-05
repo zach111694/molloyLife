@@ -1,4 +1,26 @@
-#twitter-widget-0{
+#twitter-widget-0 {
     max-width: 100% !important;
     width: 100% !important;
+}
+
+.image-container {
+    position: relative;
+}
+
+.bgButtonImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+    border-radius: 4px;
+}
+
+body {
+    background-color: white;
+    color: #000000;
+}
+
+.molloy-themed {
+    background-color: #843534;
 }
