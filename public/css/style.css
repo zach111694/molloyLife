@@ -37,3 +37,12 @@ html {
     background-position: bottom center;
     background-size: cover;
 }
+
+div.btn-group {
+    height: calc(100% / 3);
+}
+
+a.btn {
+    color: #000000;
+    font-size: large;
+}
