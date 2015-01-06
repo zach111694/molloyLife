@@ -19,8 +19,30 @@
 body {
     background-color: white;
     color: #000000;
+    height: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 .molloy-themed {
     background-color: #843534;
+}
+
+#navImageContainer {
+    height: calc(100% - 50px);
+    background-image: url("/images/molloyLifeButtons.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+div.btn-group {
+    height: calc(100% / 3);
+}
+
+a.btn {
+    color: #000000;
+    font-size: large;
 }
