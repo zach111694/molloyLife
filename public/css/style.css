@@ -24,13 +24,11 @@ table {
     background-size: cover;
 }
 
-td {
-    width: 50%;
-    text-align: center;
+div.btn-group {
+    height: calc(100% / 3);
 }
 
-td a {
+a.btn {
     color: #000000;
-    font-size: medium;
-    height: 50px;
+    font-size: large;
 }
