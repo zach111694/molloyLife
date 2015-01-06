@@ -31,7 +31,7 @@ html {
 }
 
 #navImageContainer {
-    height: 100%;
+    height: calc(100% - 50px);
     background-image: url("/images/molloyLifeButtons.jpg");
     background-repeat: no-repeat;
     background-position: bottom center;
