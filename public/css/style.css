@@ -1,4 +1,34 @@
-#twitter-widget-0{
+#twitter-widget-0 {
     max-width: 100% !important;
     width: 100% !important;
+}
+
+body {
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+table {
+    height: 100%;
+}
+
+#navImageContainer {
+    height: 100%;
+    background-image: url("/images/molloyLifeButtons.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+tr.btn-group-justified {
+    display: table-row;
+}
+
+td a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
