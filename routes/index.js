@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var molloylifeEvents = require('../external/molloylifeEvents');
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -23,6 +24,7 @@ router.get('/clubs', function (req, res) {
 });
 
 router.get('/events', function (req, res) {
+    molloylifeEvents.getLatestEvents();
     res.render('events', {title: 'Events'});
 });
 
