@@ -18,6 +18,10 @@ body {
     margin-top: 50px;
 }
 
+.panel-title:hover {
+    cursor: pointer;
+}
+
 html {
     height: 100%;
 }
