@@ -18,8 +18,14 @@ body {
     margin-top: 50px;
 }
 
+.panel-title {
+    text-align: center;
+    font-weight: bold;
+
+}
 .panel-title:hover {
     cursor: pointer;
+
 }
 
 html {
