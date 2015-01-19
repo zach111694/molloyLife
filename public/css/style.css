@@ -28,6 +28,10 @@ body {
 
 }
 
+.down-arrow:hover {
+    cursor: pointer;
+}
+
 html {
     height: 100%;
 }
@@ -42,6 +46,10 @@ html {
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
+}
+
+.full-view {
+    height: calc(100% - 50px);
 }
 
 div.btn-group {
