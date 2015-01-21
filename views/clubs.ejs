@@ -24,15 +24,17 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="panel-group" id="accordion">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <!-- African American and Caribbean Organization (AAaCO) -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title" data-toggle="collapse" data-target="#AAaCO">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#AAaCO" aria-expanded="true" aria-controls="AAaCO">
                         African American and Caribbean Organization (AACO)
+                        </a>
                     </h4>
                 </div>
-                <div id="AAaCO" class="panel-collapse collapse">
+                <div id="AAaCO" class="panel-collapse collapse" role="tabpanel" aria-labelledby="AAaCO">
                     <div class="panel-body">
                         <p>
                             AACO was established to celebrate cultural differences among African American students and Caribbean students,
@@ -48,11 +50,13 @@
             <!-- American Red Cross Club -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title" data-toggle="collapse" data-target="#AmericanRedCrossClub">
-                        American Red Cross Club
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#AmericanRedCrossClub" aria-expanded="true" aria-controls="AmericanRedCrossClub">
+                            American Red Cross Club
+                        </a>
                     </h4>
                 </div>
-                <div id="AmericanRedCrossClub" class="panel-collapse collapse">
+                <div id="AmericanRedCrossClub" class="panel-collapse collapse" role="tabpanel" aria-labelledby="AmericanRedCrossClub">
                     <div class="panel-body">
                         <p>
                             The Red Cross Club raises awareness and provides Red Cross services to the students of Molloy College
