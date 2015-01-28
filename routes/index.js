@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var youtubeAPI = require("../external/youtube_api");
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -11,7 +12,10 @@ router.get('/photos', function (req, res) {
 });
 
 router.get('/videos', function (req, res) {
-    res.render('videos', {title: 'Videos'});
+    youtubeAPI.getVideos(function(data){
+        res.send(data);
+    });
+    //res.render('videos', {title: 'Videos'});
 });
 
 router.get('/articles', function (req, res) {
