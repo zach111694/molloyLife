@@ -17,6 +17,7 @@ self = module.exports = {
             callback(null, result);
         } else {
             request(requestString,function(error,response,body){
+                body = JSON.parse(body);
                 if(!error) {
                     youtubeCache.set(cacheKey, body);
                     callback(null, body);
