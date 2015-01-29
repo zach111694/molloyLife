@@ -12,8 +12,13 @@ router.get('/photos', function (req, res) {
 });
 
 router.get('/videos', function (req, res) {
-    youtubeAPI.getVideos(function(data){
-        res.send(data);
+    youtubeAPI.getVideos(function(err, data){
+        if(!err) {
+            res.send(data);
+        } else {
+            res.send("something went wrong");
+        }
+
     });
     //res.render('videos', {title: 'Videos'});
 });
