@@ -7,26 +7,45 @@
 
 <%- include navbar.ejs %>
 
-<div class="container-fluid molloy-themed">
+<div class="container-fluid molloy-themed" style = "overflow:auto;">
 
     <div class="row">
-        <div class="col-sm-5">
+        <!--<div class="col-sm-5">-->
             <h1><%= title %></h1>
 
             <p>Welcome to <%= title %></p>
-            <!--div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="http://www.flickr.com/photos/122352844@N04/15721605056/player/" width="640" height="480" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe> - See more at: http://www.theinfotechblog.com/2014/01/how-to-embed-flickr-slideshow-on-website.html#sthash.3M6iZ4Js.dpuf
-            </div-->
-            <p style>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus Pretium faucibus lectus quis justo, ac inceptos eleifend nullam
-                facilisi vel.Cubilia curae sed sollicitudin augue eget!Duis est Massa a porttitor
-                placerat rhoncus: curabitur felis magna vel hendrerit?Aenean etiam class ridiculus eget
-                Pulvinar volutpat dictumst potenti?
-            </p>
+            <div id = "articleContent" class="" style = "overflow:auto;">
+            </div>
         </div>
     </div>
 </div>
 <%- include javascriptIncludes.ejs %>
+<script>
+function generateHTML(eventData) {
+    var eventsInfo = JSON.parse(eventData);
+    var eventHeadlines = [];
+    var HTMLStr = "";
+    var baseHREF = "http://www.molloy.edu/";
+    for(var i = 0; i < eventsInfo.length; i++) {
+        if(eventsInfo[i].previewText.indexOf("<!--") == -1 && eventHeadlines.indexOf(eventsInfo[i].headline) == -1) {
+            eventHeadlines.push(eventsInfo[i].headline);
+            var imageSrc = baseHREF + eventsInfo[i].imageSrc;
+            var storyLink = baseHREF + eventsInfo[i].storyLink;
+            HTMLStr += "Date: <date>" + eventsInfo[i].date + "</date>\n";
+            HTMLStr += '<h2><a href = "' + storyLink + '">' + eventsInfo[i].headline + '</a></h2>\n';
+            HTMLStr += '<img src = "' + imageSrc + '" alt = "' + eventsInfo[i].headline + '">\n';
+            HTMLStr += "<p>" + eventsInfo[i].previewText + "</p>\n";
+            HTMLStr += "<hr>";
+        }
+    }
+    document.getElementById("articleContent").innerHTML = HTMLStr;
+}
+var request = new XMLHttpRequest();
+//request.onload = generateHTML();
+request.open("GET", "data/articles.json", false);
+//request.open("GET", "http://localhost/articles.json", true);
+request.send();
+generateHTML(request.responseText);
+</script>
 </body>
 </html>
