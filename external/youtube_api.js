@@ -10,47 +10,45 @@ var requestString = "https://www.googleapis.com/youtube/v3/search?key=" + apikey
 
 self = module.exports = {
     getVideos: function(callback){
-        var cacheKey = "molloy-youtube";
-        var cached = youtubeCache.get(cacheKey);
-        if(cacheKey in cached) {
-            var result = cached[cacheKey];
-            callback(null, result);
-        } else {
+        //var cacheKey = "molloy-youtube";
+        //var cached = youtubeCache.get(cacheKey);
+        //if(cacheKey in cached) {
+        //    var result = cached[cacheKey];
+         //   callback(null, result);
+        //} else {
             console.log(requestString);
             request(requestString,function(error,response,body){
                 body = JSON.parse(body);
                 if(!error) {
-                    youtubeCache.set(cacheKey, body);
+                    //youtubeCache.set(cacheKey, body);
                     callback(null, body);
                 } else {
                     callback(error);
                 }
 
             })
-        }
+        //}
 
     },
     getVideoPage: function(callback,pageToken){
-        var cacheKey = "molloy-youtube";
-        var cached = youtubeCache.get(cacheKey);
-        if(cacheKey in cached) {
-            var result = cached[cacheKey];
-            callback(null, result);
-        } else {
-            var reqString = requestString.concat("&pageToken=");
-            reqString.concat(pageToken);
-            console.log(reqString);
-            request(reqString,function(error,response,body){
+        //var cacheKey = "molloy-youtube";
+        //var cached = youtubeCache.get(cacheKey);
+        //if(cacheKey in cached) {
+        //    var result = cached[cacheKey];
+        //    callback(null, result);
+        //} else {
+            console.log(requestString + "&pageToken=" + pageToken);
+            request(requestString + "&pageToken=" + pageToken, function(error,response,body){
                 body = JSON.parse(body);
                 if(!error) {
-                    youtubeCache.set(cacheKey, body);
+                    //youtubeCache.set(cacheKey, body);
                     callback(null, body);
                 } else {
                     callback(error);
                 }
 
             })
-        }
+        //}
 
     }
 };
