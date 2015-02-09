@@ -16,7 +16,31 @@ self = module.exports = {
             var result = cached[cacheKey];
             callback(null, result);
         } else {
+            console.log(requestString);
             request(requestString,function(error,response,body){
+                body = JSON.parse(body);
+                if(!error) {
+                    youtubeCache.set(cacheKey, body);
+                    callback(null, body);
+                } else {
+                    callback(error);
+                }
+
+            })
+        }
+
+    },
+    getVideoPage: function(callback,pageToken){
+        var cacheKey = "molloy-youtube";
+        var cached = youtubeCache.get(cacheKey);
+        if(cacheKey in cached) {
+            var result = cached[cacheKey];
+            callback(null, result);
+        } else {
+            var reqString = requestString.concat("&pageToken=");
+            reqString.concat(pageToken);
+            console.log(reqString);
+            request(reqString,function(error,response,body){
                 body = JSON.parse(body);
                 if(!error) {
                     youtubeCache.set(cacheKey, body);

@@ -68,6 +68,34 @@ router.get('/videoPage', function (req, res) {
     });
 });
 
+router.get('/videoPage/:pageToken', function (req, res) {
+    var pageToken = req.param("pageToken");
+    youtubeAPI.getVideoPage(function(err, data){
+        if(!err) {
+
+            var videos = [];
+            if (data["items"])
+                for (var v = 0; v < data["items"].length; v++) {
+                    var currVid = data["items"][v];
+                    var aVideo = {};
+
+                    aVideo["id"] = currVid["id"]["videoId"];
+                    aVideo["url"] = "https://www.youtube.com/watch?v=" + currVid["id"]["videoId"];
+                    aVideo["title"] = currVid["snippet"]["title"];
+                    aVideo["description"] = currVid["snippet"]["description"];
+                    aVideo["thumbnail"] = currVid["snippet"]["thumbnails"]["high"]["url"];
+
+                    videos.push(aVideo);
+                }
+
+            res.render('videos/videoPage', {title: "Videos", videos:videos});
+        } else {
+            res.send("something went wrong");
+        }
+
+    }, pageToken);
+});
+
 router.get('/articles', function (req, res) {
     res.render('articles', {title: 'Articles'});
 });
