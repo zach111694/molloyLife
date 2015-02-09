@@ -2,7 +2,7 @@ var request = require("request");
 var NodeCache = require( "node-cache" );
 var youtubeCache = new NodeCache({ stdTTL: 300, checkperiod: 120 });
 
-var apikey = "AIzaSyA0dN28kszddDuMDGzOWfRVBXahyDnAIsU";
+var apikey = "AIzaSyD6KohaRaKeIFg24tYKx4YUa7rxt156duE";
 var channelid = "UCYq97D1iaRz5fL1c515MX-g";
 
 var requestString = "https://www.googleapis.com/youtube/v3/search?key=" + apikey +

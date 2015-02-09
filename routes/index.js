@@ -16,18 +16,18 @@ router.get('/videos', function (req, res) {
         if(!err) {
 
             var videos = [];
+            if (data["items"])
+                for (var v = 0; v < data["items"].length; v++) {
+                    var currVid = data["items"][v];
+                    var aVideo = {};
 
-            for (var v = 0; v < data["items"].length; v++) {
-                var currVid = data["items"][v];
-                var aVideo = {};
+                    aVideo["id"] = currVid["id"]["videoId"];
+                    aVideo["url"] = "https://www.youtube.com/watch?v=" + currVid["id"]["videoId"];
+                    aVideo["title"] = currVid["snippet"]["title"];
+                    aVideo["description"] = currVid["snippet"]["description"];
+                    aVideo["thumbnail"] = currVid["snippet"]["thumbnails"]["high"]["url"];
 
-                aVideo["id"] = currVid["id"]["videoId"];
-                aVideo["url"] = "https://www.youtube.com/watch?v=" + currVid["id"]["videoId"];
-                aVideo["title"] = currVid["snippet"]["title"];
-                aVideo["description"] = currVid["snippet"]["description"];
-                aVideo["thumbnail"] = currVid["snippet"]["thumbnails"]["high"]["url"];
-
-                videos.push(aVideo);
+                    videos.push(aVideo);
             }
 
 
