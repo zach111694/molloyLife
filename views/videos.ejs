@@ -9,7 +9,7 @@
 
 <div class="container-fluid molloy-themed">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12" id="videoList">
 
             <% include videos/videoPage.ejs %>
 
@@ -19,6 +19,6 @@
 
 <%- include javascriptIncludes.ejs %>
 <script src="/js/jquery.jscroll.min.js"></script>
-<script> $('.col-xs-12').jscroll(); </script>
+<script> $('#videoList').jscroll(); </script>
 </body>
 </html>

@@ -26,7 +26,7 @@ self = module.exports = {
                     callback(error);
                 }
 
-            })
+            });
         //}
 
     },
@@ -47,7 +47,7 @@ self = module.exports = {
                     callback(error);
                 }
 
-            })
+            });
         //}
 
     }

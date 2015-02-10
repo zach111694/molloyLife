@@ -19,82 +19,88 @@ router.get('/videos', function (req, res) {
             if (data["items"])
                 for (var v = 0; v < data["items"].length; v++) {
                     var currVid = data["items"][v];
-                    var aVideo = {};
+                    if (currVid["id"]["kind"] === "youtube#video"){
+                        var aVideo = {};
 
-                    aVideo["id"] = currVid["id"]["videoId"];
-                    aVideo["url"] = "https://www.youtube.com/watch?v=" + currVid["id"]["videoId"];
-                    aVideo["title"] = currVid["snippet"]["title"];
-                    aVideo["description"] = currVid["snippet"]["description"];
-                    aVideo["thumbnail"] = currVid["snippet"]["thumbnails"]["high"]["url"];
+                        aVideo["id"] = currVid["id"]["videoId"];
+                        aVideo["url"] = "https://www.youtube.com/watch?v=" + currVid["id"]["videoId"];
+                        aVideo["title"] = currVid["snippet"]["title"];
+                        aVideo["description"] = currVid["snippet"]["description"];
+                        aVideo["thumbnail"] = currVid["snippet"]["thumbnails"]["high"]["url"];
 
-                    videos.push(aVideo);
+                        videos.push(aVideo);
+                    }
             }
 
 
-            res.render('videos', {title: "Videos", videos:videos});
+            res.render('videos', {title: "Videos", videos:videos, nextPage: data["nextPageToken"]});
 
         } else {
             res.send("something went wrong");
         }
 
     });
-    //res.render('videos', {title: 'Videos'});
 });
 
 router.get('/videoPage', function (req, res) {
-    youtubeAPI.getVideos(function(err, data){
-        if(!err) {
+    if (req.query["pageToken"]){
+        youtubeAPI.getVideoPage(function(err, data){
+            if(!err) {
+                var videos = [];
+                if (data["items"])
+                    for (var v = 0; v < data["items"].length; v++) {
+                        var currVid = data["items"][v];
+                        if (currVid["id"]["kind"] === "youtube#video"){
+                            var aVideo = {};
 
-            var videos = [];
-            if (data["items"])
-                for (var v = 0; v < data["items"].length; v++) {
-                    var currVid = data["items"][v];
-                    var aVideo = {};
+                            aVideo["id"] = currVid["id"]["videoId"];
+                            aVideo["url"] = "https://www.youtube.com/watch?v=" + currVid["id"]["videoId"];
+                            aVideo["title"] = currVid["snippet"]["title"];
+                            aVideo["description"] = currVid["snippet"]["description"];
+                            aVideo["thumbnail"] = currVid["snippet"]["thumbnails"]["high"]["url"];
 
-                    aVideo["id"] = currVid["id"]["videoId"];
-                    aVideo["url"] = "https://www.youtube.com/watch?v=" + currVid["id"]["videoId"];
-                    aVideo["title"] = currVid["snippet"]["title"];
-                    aVideo["description"] = currVid["snippet"]["description"];
-                    aVideo["thumbnail"] = currVid["snippet"]["thumbnails"]["high"]["url"];
+                            videos.push(aVideo);
+                        }
+                    }
+                res.render('videos/videoPage', {title: "Videos", videos:videos, nextPage: data["nextPageToken"]});
+            } else {
+                res.send("something went wrong");
+            }
+        },req.query["pageToken"]);
+    }else {
 
-                    videos.push(aVideo);
-                }
+        youtubeAPI.getVideos(function (err, data) {
 
-            res.render('videos/videoPage', {title: "Videos", videos:videos});
-        } else {
-            res.send("something went wrong");
-        }
+            if (!err) {
 
-    });
+                var videos = [];
+                if (data["items"])
+                    for (var v = 0; v < data["items"].length; v++) {
+                        var currVid = data["items"][v];
+
+                        if (currVid["id"]["kind"] === "youtube#video"){
+                            var aVideo = {};
+
+                            aVideo["id"] = currVid["id"]["videoId"];
+                            aVideo["url"] = "https://www.youtube.com/watch?v=" + currVid["id"]["videoId"];
+                            aVideo["title"] = currVid["snippet"]["title"];
+                            aVideo["description"] = currVid["snippet"]["description"];
+                            aVideo["thumbnail"] = currVid["snippet"]["thumbnails"]["high"]["url"];
+
+                            videos.push(aVideo);
+                        }
+
+                    }
+
+                res.render('videos/videoPage', {title: "Videos", videos: videos, nextPage: data["nextPageToken"]});
+            } else {
+                res.send("something went wrong");
+            }
+
+        });
+    }
 });
 
-router.get('/videoPage/:pageToken', function (req, res) {
-    var pageToken = req.param("pageToken");
-    youtubeAPI.getVideoPage(function(err, data){
-        if(!err) {
-
-            var videos = [];
-            if (data["items"])
-                for (var v = 0; v < data["items"].length; v++) {
-                    var currVid = data["items"][v];
-                    var aVideo = {};
-
-                    aVideo["id"] = currVid["id"]["videoId"];
-                    aVideo["url"] = "https://www.youtube.com/watch?v=" + currVid["id"]["videoId"];
-                    aVideo["title"] = currVid["snippet"]["title"];
-                    aVideo["description"] = currVid["snippet"]["description"];
-                    aVideo["thumbnail"] = currVid["snippet"]["thumbnails"]["high"]["url"];
-
-                    videos.push(aVideo);
-                }
-
-            res.render('videos/videoPage', {title: "Videos", videos:videos});
-        } else {
-            res.send("something went wrong");
-        }
-
-    }, pageToken);
-});
 
 router.get('/articles', function (req, res) {
     res.render('articles', {title: 'Articles'});
