@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var router = express.Router();
 
 /* GET home page. */
@@ -15,7 +16,12 @@ router.get('/videos', function (req, res) {
 });
 
 router.get('/articles', function (req, res) {
-    res.render('articles', {title: 'Articles'});
+	fs.readFile("public/data/articles.json", "utf8", function(error, text) {
+  		if (error)
+    		throw error;
+    	var articlesData = JSON.parse(text);
+    	res.render('articles', {title: 'Articles', articlesData: articlesData});
+	});
 });
 
 router.get('/clubs', function (req, res) {

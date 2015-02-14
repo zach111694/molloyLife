@@ -1,14 +1,14 @@
 var http = require("http");
-var responseStr = "";
 
 function getResponseString(callback, response) {
-  response.on("data", function(chunk) {
-    responseStr += chunk.toString();
-  });
-  response.on("end", processResponseString.bind(undefined, callback));
+  response.on("data", (function(chunk) {
+    this.responseStr += chunk.toString();
+  }).bind(this));
+  response.on("end", processResponseString.bind(this, callback));
 }
 
 function processResponseString(callback) {
+	responseStr = this.responseStr;
 	var eventItems = [];
 	var currentIndex = 0;
 
@@ -25,6 +25,7 @@ function processResponseString(callback) {
 	var IMAGE_TAG_OPEN_LEN = IMAGE_TAG_OPEN.length;
 	var IMAGE_SRC_CLOSE_LEN = IMAGE_SRC_CLOSE.length;
 	var IMAGE_TAG_CLOSE_LEN = IMAGE_TAG_CLOSE.length;
+	var NO_IMG_LINK = "Images/"
 
 	var TITLE_TAG_OPEN = '<h2 class="title">';
 	var TITLE_LINK_OPEN = 'href="';
@@ -57,7 +58,8 @@ function processResponseString(callback) {
 		startIndex = responseStr.indexOf(IMAGE_TAG_OPEN,currentIndex) + IMAGE_TAG_OPEN_LEN;
 		startIndex = responseStr.indexOf(IMAGE_SRC_OPEN,startIndex) + IMAGE_SRC_OPEN_LEN;
 		stopIndex = responseStr.indexOf(IMAGE_SRC_CLOSE,startIndex);
-		eventInfo.imageSrc = responseStr.substring(startIndex, stopIndex).trim();
+		var imageSrc = responseStr.substring(startIndex, stopIndex).trim();
+		eventInfo.imageSrc = imageSrc != NO_IMG_LINK ? imageSrc : undefined; 
 		currentIndex = responseStr.indexOf(IMAGE_TAG_CLOSE,stopIndex) + IMAGE_TAG_CLOSE_LEN;
 
 		startIndex = responseStr.indexOf(TITLE_TAG_OPEN,currentIndex) + TITLE_TAG_OPEN_LEN;
@@ -88,7 +90,8 @@ function processResponseString(callback) {
 }
 
 function getData(requestInfo, callback) {
-	var request = http.request(requestInfo, getResponseString.bind(undefined, callback));
+	var myResponseStr = {responseStr:""};
+	var request = http.request(requestInfo, getResponseString.bind(myResponseStr, callback));
 	request.end("Complete"); 
 }
 

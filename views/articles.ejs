@@ -13,39 +13,21 @@
         <!--<div class="col-sm-5">-->
             <h1><%= title %></h1>
 
-            <p>Welcome to <%= title %></p>
             <div id = "articleContent" class="" style = "overflow:auto;">
+                <% articlesData.forEach(function(articleData) { %>
+                    <div style = "border:1px solid; text-align:center">
+                        <h2><a href = "http://www.molloy.edu/<%= articleData.storyLink %>"><%= articleData.headline.split("&#39;").join("'").split("&quot;").join('"') %></a></h2>
+                        <h3><time><%=articleData.date %></time></h3>
+                        <%if(articleData.imageSrc) { %>
+                            <p><img src = "http://www.molloy.edu/<%= articleData.imageSrc %>" style = "max-width:50%;"></p>
+                        <% } %>
+                        <p><%= articleData.previewText.split("&#39;").join("'").split("&quot;").join('"') %></p>
+                    </div>
+                    <% }); %>
             </div>
         </div>
     </div>
 </div>
 <%- include javascriptIncludes.ejs %>
-<script>
-function generateHTML(eventData) {
-    var eventsInfo = JSON.parse(eventData);
-    var eventHeadlines = [];
-    var HTMLStr = "";
-    var baseHREF = "http://www.molloy.edu/";
-    for(var i = 0; i < eventsInfo.length; i++) {
-        if(eventsInfo[i].previewText.indexOf("<!--") == -1 && eventHeadlines.indexOf(eventsInfo[i].headline) == -1) {
-            eventHeadlines.push(eventsInfo[i].headline);
-            var imageSrc = baseHREF + eventsInfo[i].imageSrc;
-            var storyLink = baseHREF + eventsInfo[i].storyLink;
-            HTMLStr += "Date: <date>" + eventsInfo[i].date + "</date>\n";
-            HTMLStr += '<h2><a href = "' + storyLink + '">' + eventsInfo[i].headline + '</a></h2>\n';
-            HTMLStr += '<img src = "' + imageSrc + '" alt = "' + eventsInfo[i].headline + '">\n';
-            HTMLStr += "<p>" + eventsInfo[i].previewText + "</p>\n";
-            HTMLStr += "<hr>";
-        }
-    }
-    document.getElementById("articleContent").innerHTML = HTMLStr;
-}
-var request = new XMLHttpRequest();
-//request.onload = generateHTML();
-request.open("GET", "data/articles.json", false);
-//request.open("GET", "http://localhost/articles.json", true);
-request.send();
-generateHTML(request.responseText);
-</script>
 </body>
 </html>
