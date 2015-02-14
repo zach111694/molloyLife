@@ -81,6 +81,8 @@ function processResponseString(callback) {
 		eventItems.push(eventInfo);
 
 	} while(true);
+	
+	responseStr = "";
 
 	if(callback)
 		callback(eventItems);
