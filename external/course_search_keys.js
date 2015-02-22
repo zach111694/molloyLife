@@ -45,6 +45,6 @@ function getKeys(callback) {
 	request.end("Complete");
 }
 
-getKeys(console.log);
+//getKeys(console.log);
 
 module.exports = getKeys;
