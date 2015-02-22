@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var router = express.Router();
 
 /* GET home page. */
@@ -20,6 +21,15 @@ router.get('/articles', function (req, res) {
 
 router.get('/clubs', function (req, res) {
     res.render('clubs', {title: 'Clubs'});
+});
+
+router.get('/courses', function (req, res) {
+	fs.readFile("public/data/course-data.json", "utf8", function(error, text) {
+  		if (error)
+    		throw error;
+    	var coursesData = JSON.parse(text);
+    	res.render('courses', {title: 'Courses', coursesData: coursesData});
+	});
 });
 
 router.get('/events', function (req, res) {

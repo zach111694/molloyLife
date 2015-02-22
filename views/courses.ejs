@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include headIncludes.ejs %>
+</head>
+<body>
+
+<%- include navbar.ejs %>
+
+<div class="container-fluid molloy-themed" style = "overflow:auto;">
+
+    <div class="row">
+        <!--<div class="col-sm-5">-->
+            <h1><%= title %></h1>
+
+            <div id = "courseData" class="" style = "overflow:auto;">
+                <table>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Name</th>
+                        <th>Faculty</th>
+                        <th>Seats Open</th>
+                        <th>Status</th>
+                        <th>Day/Time</th>
+                        <th>Location</th>
+                        <th>Credits</th>
+                        <th>Begin Date</th>
+                        <th>End Date</th>
+                    </tr>
+                <% coursesData.forEach(function(course) { %>
+                    <tr>
+                        <td><nobr><%= course.code %></nobr></td>
+                        <td><%= course.title %></td>
+                        <td><%= course.professor %></td>
+                        <td><%= course.seats %></td>
+                        <td>                            
+                            <%if(course.isOpen) { %>
+                                <span style = "background-color:#00FF00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <%} else { %>
+                                <span style = "background-color:#FF0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <% } %>
+                        </td>
+                        <td>
+                            <%if(course.days) { %>
+                                <%= course.days.substring(0,10) %> From 
+                            <% } %>
+                            <%= course.time.substring(0,20) %>
+                        </td>
+                        <td><%= course.location.substring(0,50) %></td>
+                        <td><%= course.credits.substring(0,5) %></td>
+                        <td><%= course.startDate.substring(0,15) %></td>
+                        <td><%= course.endDate.substring(0,15) %></td>
+                    </tr>
+                    <% }); %>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include javascriptIncludes.ejs %>
+</body>
+</html>
