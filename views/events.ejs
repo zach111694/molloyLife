@@ -15,6 +15,7 @@
         </a>
     </div>
     </div>
+
 <div class="row">
 
     <% if (!locals.error) { %>
@@ -31,7 +32,11 @@
 
                     <div class="caption">
                         <%- events[eventIndex]["description"]%>
-                        <p> <a href=<%= events[eventIndex]["link"] %> class="btn btn-molloy btn-block" role="button">More Info</a></p>
+                        <p>
+                            <a href="<%= events[eventIndex]["link"] %>" class="btn btn-molloy btn-block" role="button" target="_blank">
+                                More Info
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
