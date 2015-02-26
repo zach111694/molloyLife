@@ -6,17 +6,25 @@ var getData = function(callback){
   request('https://life.molloy.edu/EventRss/EventsRss', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       xml2js.parseString(body, function (err, result) {
-        console.log(JSON.stringify(result));
-        callback(result);
+        //console.log(JSON.stringify(result));
+          if(!err){
+              callback(null, result);
+              return;
+          }
+          callback(err);
       });
     }
   });
 };
 module.exports = {
-  getLatestEvents: function(){
-    getData(function(data){
-      var events = data;
-      var prettyEvents = {};
+  getLatestEvents: function(callback){
+    getData(function(err, data){
+        if(!err) {
+            callback(null, data["rss"]["channel"][0]["item"]);
+            return;
+        }
+        callback(err);
+
 
 
 
