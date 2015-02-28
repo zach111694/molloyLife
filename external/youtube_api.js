@@ -2,6 +2,7 @@ var request = require("request");
 var NodeCache = require( "node-cache" );
 var youtubeCache = new NodeCache({ stdTTL: 300, checkperiod: 120 });
 
+//todo Keys should not be hardcoded
 var apikey = "AIzaSyD6KohaRaKeIFg24tYKx4YUa7rxt156duE";
 var channelid = "UCYq97D1iaRz5fL1c515MX-g";
 
