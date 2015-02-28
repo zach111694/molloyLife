@@ -1,11 +1,12 @@
 ---
 - displayName: "Facebook"
+  id: "face"
   links:
     - displayName: "Molloy College Official Page"
       url: "http://www.facebook.com/GoMolloy"
     - displayName: "Molloy Life"
       url: "https://www.facebook.com/MolloyLife"
-    - displayName: "Molloy Life"
+    - displayName: "Molloy Communications Department"
       url: "https://www.facebook.com/MolloyComDept"
     - displayName: "CERCOM at Molloy College"
       url: "https://www.facebook.com/pages/Cercom-at-Molloy-College/706169052793673?ref=hl"
@@ -45,6 +46,7 @@
 
 
 - displayName: "YouTube"
+  id: "you"
   links:
     - displayName: "Molloy Life"
       url: "http://www.youtube.com/molloylife"
@@ -60,6 +62,7 @@
       url: "https://www.youtube.com/user/SustainabilityInst"
 
 - displayName: "Twitter"
+  id: "twit"
   links:
     - displayName: "Molloy Alumni"
       url: "http://twitter.com/MolloyAlumni"
@@ -82,6 +85,7 @@
 
 
 - displayName: "Instagram"
+  id: "inst"
   links:
     - displayName: "Molloy College"
       url: "http://instagram.com/molloycollege"
@@ -97,6 +101,8 @@
       url: "https://instagram.com/molloycollegecdc"
 
 - displayName: "LinkedIn"
+  id: "link"
+  links:
     - displayName: "Molloy College Official Page"
       url: "https://www.linkedin.com/edu/school?id=18978&trk=edu-up-nav-menu-home"
     - displayName: "Molloy College Alumni"
@@ -105,6 +111,7 @@
       url: "https://www.linkedin.com/groups/Molloy-College-Communications-Department-Students-4816343"
 
 - displayName: "Pinterest"
+  id: "pint"
   links:
     - displayName: "Molloy College"
       url: "http://www.pinterest.com/molloycollege/boards"

@@ -11,25 +11,24 @@
     <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#Facebook" aria-expanded="true" aria-controls="Facebook">
-                                Facebook
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="Facebook" class="panel-collapse collapse" role="tabpanel" aria-labelledby="Facebook">
-                        <div class="panel-body">
-                            <p>
-                                <br>
-                                <br>AACO was established to celebrate cultural differences among African American students and Caribbean students,
-                                to generate common interests among students of all nationalities and to sponsor cultural exchanges and educational programs.
-                                For more information, e-mail: <a href="mailto:AACO@lions.molloy.edu">AACO@lions.molloy.edu</a>
-                            </p>
-                        </div>
+            <% for(catKey in links) { var category = links[catKey] %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#<%- category.id %>" aria-expanded="true" aria-controls="<%- category.id %>">
+                            <%- category["displayName"] %>
+                        </a>
+                    </h4>
+                </div>
+                <div id="<%- category.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%- category.id %>">
+                    <div class="panel-body">
+                        <% for(linkKey in category.links) { var link = category.links[linkKey] %>
+                                <a href="<%- link.url %>" class="btn btn-primary" target="_blank"><%- link.displayName %></a>
+                        <% } %>
                     </div>
                 </div>
+            </div>
+            <% } %>
         </div>
     </div>
 </div>
