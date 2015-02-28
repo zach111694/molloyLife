@@ -12,9 +12,9 @@
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
             <% for(catKey in links) { var category = links[catKey] %>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
+            <div class="panel panel-default" style="margin: 1em 0">
+                <div class="panel-heading" style="text-align: center;">
+                    <h4 class="panel-title" style="font-size: 2em">
                         <a data-toggle="collapse" data-parent="#accordion" href="#<%- category.id %>" aria-expanded="true" aria-controls="<%- category.id %>">
                             <%- category["displayName"] %>
                         </a>
@@ -23,7 +23,8 @@
                 <div id="<%- category.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%- category.id %>">
                     <div class="panel-body">
                         <% for(linkKey in category.links) { var link = category.links[linkKey] %>
-                                <a href="<%- link.url %>" class="btn btn-primary" target="_blank"><%- link.displayName %></a>
+                                <a href="<%- link.url %>" class="btn btn-molloy btn-block" target="_blank"
+                                   style="margin: 1%; white-space: normal"><%- link.displayName %></a>
                         <% } %>
                     </div>
                 </div>
