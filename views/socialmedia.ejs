@@ -7,23 +7,29 @@
 
 <%- include navbar.ejs %>
 
-<div class="container-fluid molloy-themed">
-
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-5">
-            <h1><%= title %></h1>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-            <p>Welcome to <%= title %></p>
-            <!--div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="http://www.flickr.com/photos/122352844@N04/15721605056/player/" width="640" height="480" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe> - See more at: http://www.theinfotechblog.com/2014/01/how-to-embed-flickr-slideshow-on-website.html#sthash.3M6iZ4Js.dpuf
-            </div-->
-            <p style>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus Pretium faucibus lectus quis justo, ac inceptos eleifend nullam
-                facilisi vel.Cubilia curae sed sollicitudin augue eget!Duis est Massa a porttitor
-                placerat rhoncus: curabitur felis magna vel hendrerit?Aenean etiam class ridiculus eget
-                Pulvinar volutpat dictumst potenti?
-            </p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Facebook" aria-expanded="true" aria-controls="Facebook">
+                                Facebook
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="Facebook" class="panel-collapse collapse" role="tabpanel" aria-labelledby="Facebook">
+                        <div class="panel-body">
+                            <p>
+                                <br>
+                                <br>AACO was established to celebrate cultural differences among African American students and Caribbean students,
+                                to generate common interests among students of all nationalities and to sponsor cultural exchanges and educational programs.
+                                For more information, e-mail: <a href="mailto:AACO@lions.molloy.edu">AACO@lions.molloy.edu</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
