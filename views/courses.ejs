@@ -31,7 +31,11 @@
                     <tr>
                         <td><nobr><%= course.code %></nobr></td>
                         <td><%= course.title %></td>
-                        <td><%= course.professor %></td>
+                        <td>
+                            <% course.professors.forEach(function(professor) { %>
+                                <%= professor %><br>
+                            <% }); %>
+                        </td>
                         <td><%= course.seats %></td>
                         <td>                            
                             <%if(course.isOpen) { %>
@@ -42,11 +46,16 @@
                         </td>
                         <td>
                             <%if(course.days) { %>
-                                <%= course.days.substring(0,10) %> From 
+                                <% for(var i = 0; i < course.days.length; i++) { %>
+                                    <%= course.days[i] %> From <%= course.times[i]; %><br>
+                                <% } %>
                             <% } %>
-                            <%= course.time.substring(0,20) %>
                         </td>
-                        <td><%= course.location.substring(0,50) %></td>
+                        <td>
+                            <% course.locations.forEach(function(location) { %>
+                                <%= location %><br>
+                            <% }); %>
+                        </td>
                         <td><%= course.credits.substring(0,5) %></td>
                         <td><%= course.startDate.substring(0,15) %></td>
                         <td><%= course.endDate.substring(0,15) %></td>

@@ -1,12 +1,11 @@
-var http = require("http");
+var https = require("https");
 
 var COOKIE_NAME = "ASP.NET_SessionId";
 
 function generateRequestHeader() {
   var requestInfo = {hostname: "lionsden.molloy.edu",
                      path:"/ICS/Course_Search/Course_Search.jnz?portlet=Course_Schedules&screen=Advanced+Course+Search&screenType=next", 
-                     method: "GET", port:80};
-      requestInfo.headers = {};
+                     method: "GET", port:443};
 
   return requestInfo;
 
@@ -41,7 +40,7 @@ function extractKeys(callback) {
 function getKeys(callback) {
 	var header = generateRequestHeader();
 	var myKeys = {responseStr: "", sessionId: undefined, refreshKey: undefined};
-	var request = http.request(generateRequestHeader(), getResponseString.bind(myKeys, callback));
+	var request = https.request(generateRequestHeader(), getResponseString.bind(myKeys, callback));
 	request.end("Complete");
 }
 

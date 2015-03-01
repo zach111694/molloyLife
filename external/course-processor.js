@@ -1,13 +1,13 @@
-var http = require("http");
+var https = require("https");
 var fs = require("fs");
 
-var REPEAT_COUNTER = 62; // Replace with number of pages or find last page by scraping
+var REPEAT_COUNTER = 56; // Replace with number of pages or find last page by scraping
 var counter = 0;
 var courses = [];
 var sharedRequestInfo;
 
 function getFileData(callback) {
-	fs.readFile("molloy-data.txt", "utf8", function(error, text) {
+	fs.readFile("../public/data/molloy-data.txt", "utf8", function(error, text) {
   		if (error)
    		 throw error;
   		//console.log("The file contained:", text);
@@ -17,12 +17,35 @@ function getFileData(callback) {
 	});
 }
 
+function getListItemsFrom(str, startDelimiter, startReadingText, endDelimiter) {
+	startDelimiter = startDelimiter || "<li";
+	startReadingText = startReadingText || ">";
+	endDelimiter = endDelimiter || "</li>";
+	var listItems = [];
+	var currentIndex = 0;
+
+	//console.log(startDelimiter + " " + endDelimiter + " " + str);
+
+	while(str.indexOf(startDelimiter, currentIndex) != -1) {
+		var pair = getStrBetweenAndEndIndex(str, currentIndex, startDelimiter, startReadingText, endDelimiter);
+		listItems.push(pair[0]);
+		currentIndex = pair[1];
+	}
+
+	return listItems;
+}
+
 function getStrBetweenAndEndIndex(str, startIndex, startLookingText, startReadingText, endReadingText) {
 	var startLookingIndex = str.indexOf(startLookingText, startIndex);
 	var startReadingIndex = startReadingText.length + str.indexOf(startReadingText, startLookingIndex);
 	var endReadingIndex = str.indexOf(endReadingText, startReadingIndex);
 
-	if(endReadingIndex < startIndex) {
+	// HACK FOR FACT THAT THERE MAY BE NO CLOSING TAG FOR <ul> when no schedule is entered
+	if(str.substring(startReadingIndex).indexOf("No schedule") == 0) {
+		endReadingIndex = startReadingIndex+1;
+	}
+
+	else if(endReadingIndex < startIndex) {
 		endReadingIndex = str.length - 1 - endReadingText.length; // go to end
 	}
 
@@ -32,15 +55,16 @@ function getStrBetweenAndEndIndex(str, startIndex, startLookingText, startReadin
 }
 
 function processResponseString(callback) {
+	//console.log(this.responseStr);
 	responseStr = this.responseStr;
 	//var courses = [];
 	var currentIndex = responseStr.indexOf("Credits"); // start processing here
 	var endIndex = responseStr.indexOf("</tbody>");
 	text = "";
 	var propertyNames = ["code", "title", "professor", "seats", "open", "timeLoc", "credits", "startDate", "endDate"];
-	var startLookingTexts = ["<a", "<td", "<li", "<td", "<td", "<li", "<td", "<td", "<td"];
+	var startLookingTexts = ["<a", "<td", "<ul", "<td", "<td", "<ul", "<td", "<td", "<td"];
 	var startReadingTexts = [">", ">", ">", ">", ">", ">", ">", ">", ">"];
-	var endReadingTexts = ["</a>", "</td>", "</li>", "</td>", "</td>", "</li>", "</td>", "</td>", "</td>"];
+	var endReadingTexts = ["</a>", "</td>", "</ul>", "</td>", "</td>", "</ul>", "</td>", "</td>", "</td>"];
 	//var courses = [];
 
 	while(responseStr.indexOf("<a", currentIndex) < endIndex && responseStr.indexOf("<a", currentIndex) >= 0) {
@@ -65,25 +89,46 @@ function processResponseString(callback) {
 
 		course.isOpen = (course.open == "Open");
 
-		if(course.timeLoc.split("&nbsp;")[0])
-			course.days = course.timeLoc.split("&nbsp;")[0];
+		course.timeLocs = [];
+		course.timeLocs = getListItemsFrom(course.timeLoc);
+		delete course.timeLoc;
 
-		if(course.timeLoc.split(";")[1]) {
-			course.time = course.timeLoc.split(";")[1];
-			course.startTime = course.time.split("-")[0];
-			course.endTime = course.time.split("-")[1];
-		} else {
-			course.time = "TBA";
-		}
+		course.days = [];
+		course.times = [];
+		course.startTimes = [];
+		course.endTimes = [];
+		course.locations = [];
 
-		if(course.timeLoc.split(";")[2]) {
-			course.location = course.timeLoc.split(";")[2].trim();
-		} else {
-			course.location = "TBA";
-		}
+		course.timeLocs.forEach(function(timeLoc) {
+
+			if(timeLoc) {
+				if(timeLoc.split("&nbsp;")[0]) {
+					course.days.push(timeLoc.split("&nbsp;")[0]);
+				}
+
+				if(timeLoc.split(";")[1]) {
+					var meetTime = timeLoc.split(";")[1];
+					course.times.push(meetTime);
+					course.startTimes.push(meetTime.split("-")[0]);
+					course.endTimes.push(meetTime.split("-")[1]);
+				} else {
+					course.times.push("TBA");
+				}
+
+				if(timeLoc.split(";")[2]) {
+					course.locations.push(timeLoc.split(";")[2].trim());
+				} else {
+					course.locations.push("TBA");
+				}
+			}
+		});
+
+		course.professors = [];
+		course.professors = getListItemsFrom(course.professor);
+		delete course.professor;
 
 		text += "\n";
-		courses.push(course)
+		courses.push(course);
 	}
 
 	//var courseJSON = JSON.stringify(courses);
@@ -91,7 +136,8 @@ function processResponseString(callback) {
 	if(REPEAT_COUNTER > counter) {
 		counter++;
 		var refreshKey = getStrBetweenAndEndIndex(responseStr, 0, '___BrowserRefresh', 'value="', '"')[0];
-		console.log("Repeating with " + refreshKey + "...\n");
+		console.log("Repeating with " + refreshKey + "...");
+		console.log("Processing page " + counter);
 		sharedRequestInfo.body = '------FormBoundary\nContent-Disposition: form-data; name="__PORTLET"\n\npg0$V$ltrNav\n------FormBoundary\nContent-Disposition: form-data; name="_scriptManager_HiddenField"\n\n\n------FormBoundary\nContent-Disposition: form-data; name="__EVENTTARGET"\n\npg0$V$ltrNav\n------FormBoundary\nContent-Disposition: form-data; name="__EVENTARGUMENT"\n\n'+counter+'\n------FormBoundary\nContent-Disposition: form-data; name="___BrowserRefresh"\n\n'+refreshKey+'\n------FormBoundary\nContent-Disposition: form-data; name="userName"\n\n\n------FormBoundary\nContent-Disposition: form-data; name="password"\n\n\n------FormBoundary\nContent-Disposition: form-data; name="pg0$V$ddlTerm"\n\n2014;SP\n------FormBoundary\nContent-Disposition: form-data; name="pg0$V$ddlDivision"\n\n\n------FormBoundary--';
 		sharedRequestInfo.headers["Content-Length"] = sharedRequestInfo.body.length;
 		getData(sharedRequestInfo, callback);
@@ -111,7 +157,7 @@ function getResponseString(callback, response) {
 
 function getData(requestInfo, callback) {
 	var myResponseStr = {responseStr:""};
-	var request = http.request(requestInfo, getResponseString.bind(myResponseStr, callback));
+	var request = https.request(requestInfo, getResponseString.bind(myResponseStr, callback));
 	sharedRequestInfo = requestInfo;
 	if(requestInfo.body)
 		request.write(requestInfo.body);
