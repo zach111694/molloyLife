@@ -15,7 +15,7 @@ body {
     background-color: white;
     color: #000000;
     height: 100%;
-    margin-top: 50px;
+    padding-top: 50px;
 }
 
 html {
@@ -27,11 +27,11 @@ html {
 }
 
 #navImageContainer {
-    height: calc(100% - 50px);
-    background-image: url("/images/molloyLifeButtons.jpg");
+    height: 100%;
+    background-image: url("/images/Paw.jpg");
     background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: cover;
+    background-position: center center;
+    background-size: contain;
 }
 
 div.btn-group {
