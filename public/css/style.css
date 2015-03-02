@@ -56,3 +56,27 @@ a.btn {
     color: #000000;
     font-size: large;
 }
+
+/* Custom button matching Molloy colors */
+a.btn-molloy {
+    background-color: #A31919;
+    color: #ffffff;
+}
+
+a.btn-molloy:hover {
+    background-color: #851414;
+    color: #ffffff;
+}
+
+a.btn-molloy:active {
+    background-color: #691010;
+    color: #ffffff;
+}
+
+a.btn-molloy:after {
+    color: #ffffff;
+}
+
+a.btn-molloy:visited {
+    color: #ffffff;
+}

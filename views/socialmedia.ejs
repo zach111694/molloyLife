@@ -7,23 +7,29 @@
 
 <%- include navbar.ejs %>
 
-<div class="container-fluid molloy-themed">
-
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-5">
-            <h1><%= title %></h1>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-            <p>Welcome to <%= title %></p>
-            <!--div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="http://www.flickr.com/photos/122352844@N04/15721605056/player/" width="640" height="480" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe> - See more at: http://www.theinfotechblog.com/2014/01/how-to-embed-flickr-slideshow-on-website.html#sthash.3M6iZ4Js.dpuf
-            </div-->
-            <p style>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus Pretium faucibus lectus quis justo, ac inceptos eleifend nullam
-                facilisi vel.Cubilia curae sed sollicitudin augue eget!Duis est Massa a porttitor
-                placerat rhoncus: curabitur felis magna vel hendrerit?Aenean etiam class ridiculus eget
-                Pulvinar volutpat dictumst potenti?
-            </p>
+            <% for(catKey in links) { var category = links[catKey] %>
+            <div class="panel panel-default" style="margin: 1em 0">
+                <div class="panel-heading" style="text-align: center;">
+                    <h4 class="panel-title" style="font-size: 2em">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#<%- category.id %>" aria-expanded="true" aria-controls="<%- category.id %>">
+                            <%- category["displayName"] %>
+                        </a>
+                    </h4>
+                </div>
+                <div id="<%- category.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%- category.id %>">
+                    <div class="panel-body">
+                        <% for(linkKey in category.links) { var link = category.links[linkKey] %>
+                                <a href="<%- link.url %>" class="btn btn-molloy btn-block" target="_blank"
+                                   style="margin: 1%; white-space: normal"><%- link.displayName %></a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <% } %>
         </div>
     </div>
 </div>

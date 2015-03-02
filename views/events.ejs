@@ -6,24 +6,46 @@
 <body>
 
 <%- include navbar.ejs %>
-<nav>
-    <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-            <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-xs-12" style="text-align: center; padding: 4%">
+        <a class="btn btn-molloy" href="https://life.molloy.edu/EventRss/EventsIcal">
+            Subscribe to Calendar
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        </a>
+    </div>
+    </div>
+
+<div class="row">
+
+    <% if (!locals.error) { %>
+    <!--link,title,description,enclosure-0-$-url -->
+        <% for(eventIndex in events) { %>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <h3><%= events[eventIndex]["title"]%></h3>
+
+                    <% if(events[eventIndex]["enclosure"]) { %>
+                        <img src=<%= events[eventIndex]["enclosure"][0]["$"]["url"] %> alt="...">
+                    <% } %>
+
+
+                    <div class="caption">
+                        <%- events[eventIndex]["description"]%>
+                        <p>
+                            <a href="<%= events[eventIndex]["link"] %>" class="btn btn-molloy btn-block" role="button" target="_blank">
+                                More Info
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% } else { %>
+        <h2>Error getting articles!</h2>
+    <% } %>
+</div>
+</div>
+<%- include javascriptIncludes.ejs %>
 </body>
 </html>
