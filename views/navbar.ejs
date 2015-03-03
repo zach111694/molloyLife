@@ -1,9 +1,30 @@
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar-mainbar">
-    <img id="navbar-logo" src="/images/molloyLifeLogo.jpeg">
-    <a class="navbar-brand" id="navbar-text" >MOLLOY LIFE</a>
-    <a class="btn navbar-toggle show" href="/navigation">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+    <a id="home-button" class="btn btn-default navbar-btn" href="/">
+        <span class="glyphicon glyphicon-home"></span>
     </a>
+    <button type="button" class="btn navbar-toggle show" data-toggle="modal" data-target=".bs-example-modal-sm">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id="navImageContainer">
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn" href="photos">PHOTOS</a>
+                        <a class="btn" href="videos">VIDEOS</a>
+                    </div>
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn" href="articles">ARTICLES</a>
+                        <a class="btn" href="events">EVENTS</a>
+                    </div>
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn" href="clubs">CLUBS</a>
+                        <a class="btn" href="socialmedia">SOCIAL MEDIA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </nav>
