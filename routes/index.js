@@ -138,8 +138,4 @@ router.get('/socialmedia', function (req, res) {
     res.render('socialmedia', {title: 'Social Media', links: theLinks});
 });
 
-router.get('/navigation', function (req, res) {
-    res.render('navigation', {title: 'Navigation'})
-});
-
 module.exports = router;
