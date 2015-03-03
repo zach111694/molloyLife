@@ -44,10 +44,6 @@ html {
     background-size: contain;
 }
 
-.full-view {
-    height: calc(100% - 50px);
-}
-
 div.btn-group {
     height: calc(100% / 3);
 }
