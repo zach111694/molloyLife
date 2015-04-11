@@ -110,7 +110,15 @@ router.get('/articles', function (req, res) {
 });
 
 router.get('/clubs', function (req, res) {
-    res.render('clubs', {title: 'Clubs'});
+    var theClubs = [];
+    try {
+        var doc = yaml.safeLoad(fs.readFileSync('./data/clubs.yml', 'utf8'));
+        theClubs = doc;
+        console.log(doc);
+    } catch (e) {
+        console.log(e);
+    }
+    res.render('clubs', {title: 'Clubs', clubs: theClubs});
 });
 
 router.get('/events', function (req, res) {
@@ -131,7 +139,6 @@ router.get('/socialmedia', function (req, res) {
     try {
         var doc = yaml.safeLoad(fs.readFileSync('./data/socialLinks.yml', 'utf8'));
         theLinks = doc;
-        console.log(doc);
     } catch (e) {
         console.log(e);
     }
