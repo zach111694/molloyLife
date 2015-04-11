@@ -16,7 +16,7 @@
             <p class="text-center" >
                 Molloy College is proud of its more than 50 student clubs and organizations.
                 Some have an academic foundation or a service learning component, while others are centered around a cultural theme.
-                We encourage your participation in the following clubs:
+                We encourage your participation in the following clubs below:
             </p>
         </div>
     </div>
@@ -25,49 +25,31 @@
 <div class="container-fluid">
     <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <!-- African American and Caribbean Organization (AAaCO) -->
+
+            <% for(catKey in clubs) { var category = clubs[catKey] %>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#AAaCO" aria-expanded="true" aria-controls="AAaCO">
-                            African American and Caribbean Organization (AACO)
+                        <a data-toggle="collapse" data-parent="#accordion" href="#<%- category.id %>" aria-expanded="true" aria-controls="<%- category.id %>">
+                            <%- category["displayName"] %>
                         </a>
                     </h4>
                 </div>
-                <div id="AAaCO" class="panel-collapse collapse" role="tabpanel" aria-labelledby="AAaCO">
+                <div id="<%- category.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%- category.id %>">
                     <div class="panel-body">
-                        <p>
-                            <br>
-                            <br>AACO was established to celebrate cultural differences among African American students and Caribbean students,
-                            to generate common interests among students of all nationalities and to sponsor cultural exchanges and educational programs.
-                            For more information, e-mail: <a href="mailto:AACO@lions.molloy.edu">AACO@lions.molloy.edu</a>
-                        </p>
+                        <%- category.description %>
+                        <br>
+                        <br>
+
+                        <p>contact: <a target="_blank" href="mailto:<%- category.contact %>">
+                            <%- category.contact %>
+                        </a></p>
                     </div>
                 </div>
             </div>
-            <!--
-            <!-- American Red Cross Club -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#AmericanRedCrossClub" aria-expanded="true" aria-controls="AmericanRedCrossClub">
-                            American Red Cross Club
-                        </a>
-                    </h4>
-                </div>
-                <div id="AmericanRedCrossClub" class="panel-collapse collapse" role="tabpanel" aria-labelledby="AmericanRedCrossClub">
-                    <div class="panel-body">
-                        <p>
-                            The Red Cross Club raises awareness and provides Red Cross services to the students of Molloy College
-                            as well as the local community. Club members act in accordance with the American Red Cross Code of Conduct.
-                            <br>
-                            <br>
-                            To join, find out about upcoming activities and events,
-                            e-mail <a href="mailto:redcrossclub@lions.molloy.edu">RedCrossClub@lions.molloy.edu</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <% } %>
+
+
         </div>
     </div>
 </div>
