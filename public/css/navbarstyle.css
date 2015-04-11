@@ -2,7 +2,7 @@
     background-color: #A31919;
     border: 0px;
     border-radius: 0px;
-    background-image:url("/images/hashMolloyLifeWhite.png");
+    background-image:url("/images/hashMolloyLifeWhiteSmall.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 150px;
@@ -20,7 +20,7 @@
 }
 
 #molloy-life{
-    background-image:url("/images/hashMolloyLifeWhite.png")
+    background-image:url("/images/hashMolloyLifeWhiteSmall.png")
     background-repeat: no-repeat;
     position: absolute;
     background-position: center center;
