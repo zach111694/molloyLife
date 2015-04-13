@@ -65,7 +65,7 @@ router.get('/videoPage', function (req, res) {
                             videos.push(aVideo);
                         }
                     }
-                res.render('videos/videoPage', {title: "Videos", videos:videos, nextPage: data["nextPageToken"]});
+                res.render('vids/videoPage', {title: "Videos", videos:videos, nextPage: data["nextPageToken"]});
             } else {
                 res.send("something went wrong");
             }
@@ -95,7 +95,7 @@ router.get('/videoPage', function (req, res) {
 
                     }
 
-                res.render('videos/videoPage', {title: "Videos", videos: videos, nextPage: data["nextPageToken"]});
+                res.render('vids/videoPage', {title: "Videos", videos: videos, nextPage: data["nextPageToken"]});
             } else {
                 res.send("something went wrong");
             }
