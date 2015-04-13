@@ -26,24 +26,27 @@
     <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-            <% for(catKey in clubs) { var category = clubs[catKey] %>
+            <% for(catKey in clubs) { var currClub = clubs[catKey] %>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#<%- category.id %>" aria-expanded="true" aria-controls="<%- category.id %>">
-                            <%- category["displayName"] %>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#<%- currClub.id %>" aria-expanded="true" aria-controls="<%- currClub.id %>">
+                            <%- currClub["displayName"] %>
                         </a>
                     </h4>
                 </div>
-                <div id="<%- category.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%- category.id %>">
+                <div id="<%- currClub.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%- currClub.id %>">
                     <div class="panel-body">
-                        <%- category.description %>
+                        <%- currClub.description %>
                         <br>
                         <br>
-
-                        <p>contact: <a target="_blank" href="mailto:<%- category.contact %>">
-                            <%- category.contact %>
-                        </a></p>
+                        <p>contact:
+                        <% for (cIndex in currClub.contact){%>
+                         <a target="_blank" href="mailto:<%- currClub.contact %>">
+                            <%- currClub.contact[cIndex] %>
+                        </a>
+                        <% }%>
+                        </p>
                     </div>
                 </div>
             </div>
