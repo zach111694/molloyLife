@@ -1,0 +1,222 @@
+---
+- displayName: "African American and Caribbean Organization (AACO)"
+  id: "AAaCO"
+  description: "AACO was established to celebrate cultural differences among African American students and Caribbean students,to generate common interests among students of all nationalities and to sponsor cultural exchanges and educational programs."
+  contact:
+    - "AACO@lions.molloy.edu"
+- displayName: "American Red Cross Club"
+  id: "AmericanRedCrossClub"
+  description: "The Red Cross Club raises awareness and provides Red Cross services to the students of Molloy College as well as the local community. Club members act in accordance with the American Red Cross Code of Conduct."
+  contact:
+    - "RedCrossClub@lions.molloy.edu"
+- displayName: "American Sign Language Club"
+  id: "AmericanSignLanguageClub"
+  description: "The American Sign Language Club raises awareness for the deaf population and is involved with community service projects in the local community. We welcome all and invite you to join us in our efforts."
+  contact:
+    - "ASL@lions.molloy.edu"
+- displayName: "Anime Club"
+  id: "AnimeClub"
+  description: "<strong>Meetings: Tuesdays at 3:30PM in the Public Square Simulation Room</strong><br><br>The Anime Club at Molloy College is devoted to the friendly exchange of knowledge about Japan, Anime, Manga, Comics, Videogames and the Internet, as well as the culture surrounding it. From watching anime episodes, to playing hit videogame classics, to discussing all the latest news within the realm of fandom, the Anime Club is open to anyone and everyone that shares a passion for anime, manga, comics, games and Japanese culture.<br><br>Founded in September 2012, the Molloy College Anime Club is Molloy's one-stop spot for anything and everything Anime, Manga, Gaming, and general J-Culture. Meetings are usually spent watching and discussing anime, having mini in-club gaming tournaments, and playing various card games. We also have a community of TCG players that play while in club, as well as a large number of 3DS players, so come have a spotpass and maybe a Pokemon Battle or two. Annual events feature attending New York Comic Con in the fall, as well as the Brooklyn Botanical Gardens Sakura Matsuri in the Spring. We also have random hang-out weekends in the city, stopping at Kinokuniya, Karaoke, Midtown Comics, and various other places anime fans would stop. Come check us out, we are a passionate community of fans that is always open. Link to the Anime Club's official website:<a href=\"http://animemolloy.webs.com\">http://animemolloy.webs.com</a>"
+  contact:
+    - "anime@lions.molloy.edu"
+    - "mschultz@lions.molloy.edu"
+- displayName: "Biology Club"
+  id: "BiologyClub"
+  description: " The Biology Club intends to spark an interest in biology outside of the classroom through social interactions in an enjoyable atmosphere. The club wishes to host field trips to museums and other biology exhibits as well as to sponsor guest speakers in the field of biology and other sciences. The club will encourage the advancement of science through a monthly newsletter featuring published articles regarding current research. Lastly, the club will host demonstrations of various laboratory experiments to further expand the entire Molloy community’s knowledge of the subject matter."
+  contact:
+    - "NFernandez@lions.molloy.edu"
+- displayName: "Break the Silence Club"
+  id: "BreakTheSilenceClub"
+  description: "The purpose of this organization is to end the silence associated with relationship violence through education, training, and responsible action.<br><br>Our goals are to raise awareness, stimulate discussion and education related to relationship violence and its consequences, to develop a safe environment for communication, disclosure, and referral of relationship violence, and to develop peer-support mentoring and educational program."
+  contact:
+    - "taprigliano@molloy.edu"
+- displayName: "Business and Accounting Club"
+  id: "BusinessAndAccountingClub"
+  description: "The Business and Accounting Club will assist students in communicating the practice of professional management to Molloy and its community. Through research, discussion, publications and other appropriate means - to conduct and promote, study and understand the social, psychological and economic implications of scientific principles of modern management, accounting and economics.<br><br>The Business and Accounting Club is an organization that provides students with an opportunity to participate in a dynamic business minded atmosphere. In this environment students are pushed to go beyond their previous limits to reach new levels in the areas of communication, research and study. Some of the very best lessons cannot be taught out of a textbook, therefore the Business and Accounting Club incorporates real world activities to create a well-rounded area of focus. Our club spends time hosting events for its members, student body, as well as reaching out to the community through service hours. Molloy College has students of all disciplines and our club desires to reach out to the rest of the student body. We hope that students of all majors and interests would give our club a chance to enhance their knowledge about business and all its aspects. More importantly, our club acts as a network that each member can call upon for assistance with coursework, find partners for a project/business venture or simply ask questions about Molloy."
+  contact:
+    - "BAClub@lions.molloy.edu"
+- displayName: "Career in Sports Club"
+  id: "CareerInSportsClub"
+  description: "Designed to educate members about the many different job opportunities in sports by learning from professionals in various industries. We also stress the importance of attaining internships and will help members apply. Field trip possibilities.<br><br>The goal of the Career in Sports Club is for members to learn first-hand from accredited sports professionals. We will invite those that hold various positions within the industry to speak to the club about what they do. There will be a Question and Answer session following each guest speaker. Another goal of the Club is to bring club members to team facilities (front offices, stadiums, and other miscellaneous events) where they can observe how organizations function in day to day operations. Such guests may include but are not limited to: Professional athletes, General Managers, Vice Presidents, Marketing, Game Day Operations, Agents, Sports Medicine, and CEO’s of Radio and Sport Applications."
+  contact:
+    - []
+- displayName: "Chrysalis (yearbook)"
+  id: "Chrysalis"
+  description: "Chrysalis puts together the annual yearbook incorporating college activities, senior and employee portraits, creative art and literary works and memories of the student's’ past four years."
+  contact:
+    - "chrysalis@molloy.edu"
+- displayName: "Club Italia"
+  id: "ClubItalia"
+  description: "We introduce and promote the Italian culture through campus, especially through bake sales with your favorite Italian pastry. We work with campus ministries by helping out and volunteering at local soup kitchens. Also, we have alot of stuff planned this upcoming year, like Italian Feasts, meetings with pastries, bake sales and pastry sales too! Come discover your Italian heritage! Ci Vediamo!"
+  contact:
+    - "Nferraro@Lions.molloy.edu"
+- displayName: "Club Trio"
+  id: "ClubTrio"
+  description: "The TRiO CLuB was established to increase retention by providing an opportunity for members to become involved in activities which facilitate a supportive campus climate and encourage academic, social and personal success while learning valuable skills. We seek to further promote cultural awareness on campus and enhance community relationships in the local community through service learning endeavors."
+  contact:
+    -  "cmcguire@lions.molloy.edu"
+- displayName: "Education Club"
+  id: "EducationClub"
+  description: "Through the Education Club activities, students will reinforce their goal of becoming teachers. The club will strive to provide students with invaluable knowledge about their chosen career."
+  contact:
+    - "educationclub@Lions.molloy.edu"
+- displayName: "Entrepreneurship Club"
+  id: "EntrenpreneurshipClub"
+  description: "The Molloy’s Entrepreneurship Club is an organization that provides the opportunity for students to learn and implement the process of starting a successful business, or pursuing potential inventions. With the help of our advisor, Aaron Foss, who is founder of the Wing Dipper Cup and NoMoRobo, our club provides students the networking opportunities to see your idea come full circle also. The club takes part in business plan competitions, entrepreneur workshops and attends speaker series. If you have a passion for inventing or solving problems, and aren't afraid to work outside of your comfort zone, this club would be a great opportunity for you."
+  contact:
+    - "mrusso@lions.molloy.edu"
+- displayName: "Gaelic Society"
+  id: "GaelicSociety"
+  description: " The Gaelic Society will foster in its members an understanding of and love for Irish culture as well as developing an appreciation of Irish music, dance, and history throughout Molloy College."
+  contact:
+    - "gaelic@lions.molloy.edu"
+- displayName: "Hilel (Jewish Student Union)"
+  id: "Hilel"
+  description: "The Foundation for Jewish Campus Life provides opportunities for Jewish students to explore and celebrate their Jewish identity through its global network of regional centers, campus foundations, and Hillel student organizations. Hillel is working to provoke a renaissance of Jewish life."
+  contact:
+    - "hillel@lions.molloy.edu"
+- displayName: "History and Political Science Club"
+  id: "HistoryAndPoliticalScienceClub"
+  description: "The History and Political Science Club promotes interest in the disciplines of History and Political Science and serve as a guide and forum for students interested in these fields. Club activities include sponsorship of lectures by local and national scholars, trips to museums and historic sites, films and fundraising events."
+  contact:
+    - "HistoryClub@lions.molloy.edu"
+- displayName: "Italian Student Union"
+  id: "ItalianStudentUnion"
+  description: "The Italian Club spreads Italian culture within the college community; encouraging all students and members of the Molloy community to participate in activities and get a better understanding of Italian heritage."
+  contact:
+    - "ItalianClub@lions.molloy.edu"
+- displayName: "Leadership, Education, and Awareness of Disabilities (L.E.A.D. Club)"
+  id: "LEAD"
+  description: "Leadership, Education, and Awareness of Disabilities (L.E.A.D.) Club at Molloy College is dedicated to increasing awareness and mindfulness of disabilities by holding on-campus events and presentations for students, staff, and faculty. L.E.A.D. is open to any and all members of the student body who wish to help in this mission through attendance at meetings, contribution of ideas, and organization of events and presentations.<br><br>L.E.A.D. has organized several events that are not only informational, but also engage the Molloy community in order to further increase the meaning of what it means to have a disability. Events such as Wheeling the Way (where students, staff, and faculty sign-up to use a wheelchair during their full day at Molloy) and Breakfast in the Dark (a spin-off of the popular Dinner in the Dark) give students, staff and faculty the ability to experience first-hand what it may be like to have certain disabilities.<br><br>It should be noted that the members of L.E.A.D. give some of the most breath-taking, and inspiring presentations. Several members of L.E.A.D. who have disabilities have volunteered on several occasions to share their very personal stories in hopes of providing accurate information on what life is like for a person with a disability. Presentations have spanned across several themes, including assistive technology, the transition from high school to college, and accommodations in higher education. Recently, several members of L.E.A.D. went to Baltimore, Maryland to present at the Association of Higher Education And Disability (AHEAD) conference, where their ideas and stories were widely and positively received.<br><br>Click <a href=\"http://www.molloy.edu/molloy-life/clubs-and-organizations/leadership-education-and-awareness-for-disabilities\" target='_blank'>here</a> to visit our website.<br><br>"
+  contact:
+    - "leadclub@lions.molloy.edu"
+- displayName: "Lioness Steppers"
+  id: "LionessSteppers"
+  description: "The Lioness Steppers, through step dancing, bring a unique form of entertainment and camaraderie to campus. The Lioness Steppers perform their routines at various events throughout the academic year."
+  contact:
+    - "step@lions.molloy.edu"
+- displayName: "Lions Consulting Club"
+  id: "LionsConsultingClub"
+  description: "Lions Consulting Club focuses on developing students and maximizing their potential regardless of what career path they wish to pursue. We provide logic based learning opportunities (Case Studies), Presentation workshops(such as our public speaking speech sessions or our \"bring your own PPT day\"), interview practices (group and individual pitches), networking experiences, and optional opportunities to apply business fundamentals to specific cases."
+  contact:
+    - "lionsconsulting13@gmail.com"
+- displayName: "Literary Magazine"
+  id: "LiteraryMagazine"
+  description: "The Molloy Literary Magazine provides an outlet for the students of Molloy College to showcase their creative and artistic sides. The magazine is published annually."
+  contact:
+    - "LitMag@lions.molloy.edu"
+- displayName: "Lion's Café"
+  id: "LionsCafe"
+  description: "The Lion's Café, a club focused on writing and performing poetry, allows students and members of the Molloy community to be creative and expressive about who they are and what they care about."
+  contact:
+    - "lionscafe@lions.molloy.edu"
+- displayName: "Math and Computer Studies Club (MACS)"
+  id: "MathAndComputerStudiesClub"
+  description: "The purpose of the Math and Computer Studies Club (MaCS) is to promote the interest of mathematics and computer studies at Molloy, and to engage students, through interaction with faculty, alumni and those that are established in the industry, by applying the knowledge to research and industry.<br><br><strong>MaCS Moderators</strong><br>Dr. Manyiu Tse, <a href=\"mailto:mtse@molloy.edu\">mtse@molloy.edu</a><br>Dr. Deborah Upton, <a href=\"mailto:dupton@molloy.edu\">dupton@molloy.edu</a>"
+  contact:
+    - "Macs@lions.molloy.edu"
+- displayName: "Molloy College Men's Rugby Club"
+  id: "MensRugby"
+  description: "The Rugby Clubs were established to promote interest in rugby and compete in local events with other institutions.  Both the men's and women's rugby teams serve to permit those not on an NCAA team to participate in a competitive sport while at Molloy.<br><br>Mission: To increase retention by providing an opportunity for members to become involved in activities which facilitate a supportive campus climate and encourage academic, social and personal success while learning valuable skills. We seek to further promote cultural awareness on campus and enhance community relationships in the local community through service learning endeavors."
+  contact:
+    - "Rugby@lions.molloy.edu"
+- displayName: "Molloy College Women's Rugby Club"
+  id: "WomensRugby"
+  description: "The Molloy College Women's Rugby Football Club made their long-awaited debut in the Fall of 2008. After a small group of women, led by Margaret Ziminski, tried for many years to get a club started. The fruits of their labor were finally recognized when the Class of 2012 arrived in Rockville Centre.<br><br>Under the direction of Scott Salvato and Brendan Droge, nearly 30 ladies were smashing tackle bags and hitting the club's newly-purchased scrum machine within days of their introduction to rugby.<br><h3 class=\"text-center\">The Ladies' Debut</h3>Molloy College Women's Rugby made its debut on March 22, against a well-schooled Sacred Heart University. Though the Pioneers \"took the Lions to class\" that day, a new chapter in the history of Molloy College had been written. The Ladies in Maroon and White went winless in the spring of 2009, but it certainly wasn't from lack of heart or passion for the game. Fall 2009 marked the Ruggettes from RVC's first Met Union league season. It wouldn't be long before the ladies tasted their first league victory.<br><br>In the season's first two weekends, Molloy dismantled Bard and Drew by the scores of 73-0 and 39-0 respectively. Explosive offense and pulverizing defense instantly became the Lady Lions' trademarks. Incredibly, the team would go on to secure a playoff berth in their inaugural season! Despite losing to powerhouse Fairfield in the Met Union Semifinals, Molloy had proven itself as a force to be reckoned with"
+  contact:
+    - "amancilla@lions.molloy.edu, cbyrne@lions.molloy.edu"
+- displayName: "Molloy Forum (newspaper)"
+  id: "MolloyForum"
+  description: "The Molloy Forum serves as a viable, unbiased, objective and informative means of communication among students, faculty and the administration of Molloy College. Currently, the newspaper is published monthly."
+  contact:
+    - "forum@lions.molloy.edu"
+- displayName: "Molloy Life Media"
+  id: "MolloyLifeMedia"
+  description: " Molloy Life Media produce the student publications at Molloy College. YouTube Videos, Flickr Photos, Molloy Forum Newspaper, IMPACT Magazine, Miss Molloy Magazine and Yearbook."
+  contact:
+    - "foliver@molloy.edu"
+- displayName: "Molloy Lions Poetry Cafe (Poetry Club/ MLPC)"
+  id: "MLPC"
+  description: "Our club is focused on advancing through the use of Poetic Expression. Poetry is not our sole focus, as we appreciate and practice all forms of literary arts."
+  contact:
+    - "Aedjamian@lions.molloy.edu"
+- displayName: "Molloy Mock Trial/Moot Court Club"
+  id: "MolloyMockTrial"
+  description: "The purpose Moot Court is to generate student interest in various legal fields, to prepare students for careers in the legal profession, to familiarize students with courtroom procedures and help students build vital skills needed for any field of study."
+  contact:
+    - "mocktrial@lions.molloy.edu"
+- displayName: "Molloy Nursing Student Association (MNSA)"
+  id: "MolloyNursingStudentAssociation"
+  description: "The vision of the Molloy Nursing Student Association is to learn, educate, promote healing, provide and care for fellow human beings and to help them maintain a state of holistic wellness within the humanistic framework of nursing, valuing humanity, health and environment for their clients and themselves.<br><br>This organization is a constituent school chapter of the the Nursing Students’ Association of New York State, Incorporated (NSANYS), and the National Student Nurses’ Association, Incorporated (NSNA).  This organization is recognized as an active club by the Molloy Student Government (MSG), as per their requirements of the current academic year."
+  contact:
+    - "MNSA@lions.molloy.edu"
+- displayName: "Molloy Performing Arts Club (MPAC)"
+  id: "MPAC"
+  description: "MPAC is a student-run club whose members share an appreciation and love for theatre arts both inside and outside of the classroom. All of our productions are completely run by the student members.<br><br>MPAC was a revived club in 2011 by Ryan Lane.  The club consisted of 6 members at that time. Now, our family has grown to have 40 plus members.  The main purpose of MPAC is to establish a fun and creative environment for Molloy students to express their passion for the performing arts. Each year, MPAC strives to put on at least 2 productions.  Our productions are fully run by the students.  From the directing, acting, costume design, light design, sound, stage managers, tech crew, choreography, musical pit members, programs, concessions and advertising,it's almost entirely student-run and we pride ourselves on that.<br><br><strong>2013-2014:</strong> High Fidelity, Les Miserables, Back to 80's<br><strong>2012-2013:</strong> Rent, Grease<br><strong>2011-2012:</strong> Rumors, 25th Annual Putnam County Spelling Bee <br><br>As well as full productions, MPAC is expanding to put on other theatrical events.  Such events have included a National Theatre of the Deaf performance (2014), Haunted Theatre (2013), One Year Rent Reunion Concert (2013), Anti-Bullying Benefit Concert (2011) and Murder Mystery Dinners (2012, 2011).<br><br>Molloy is proud to offer a <a href=\"http://www.molloy.edu/academics/undergraduate-programs/theatre-arts\" target=\"_blank\">Bachelor of Fine Arts</a>(BFA) in Theatre Arts in collaboration with CAP21, \"America's Musical Theatre Conservatory and Theatre Company.\"<br><br><h3 class=\"text-center\">The Performing Arts Club performing Legally Blonde</h3><div class=\"embed-responsive embed-responsive-16by9\"><iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/6xBxJzaUuZ4\" frameborder=\"0\" allowfullscreen></iframe></div><h3 class=\"text-center\">The Performing Arts Club performing Little Shop of Horrors</h3><div class=\"embed-responsive embed-responsive-16by9\"><iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/i8P4r40Krq8\" frameborder=\"0\" allowfullscreen></iframe></div>"
+  contact:
+    - "adelgado@lions.molloy.edu, PAC@lions.molloy.edu"
+- displayName: "Music Education Club"
+  id: "MusicEducationClub"
+  description: "The Music Education Club, or A.Mus.Ed, provides a network of social, personal and professional support for Music Education students. The group organizes outings, activities, guest speakers and trips relevant to music and/or music education."
+  contact:
+    - "MusicEducationClub@lions.molloy.edu"
+- displayName: "Music Therapy Club"
+  id: "MusicTherapyClub"
+  description: "The music therapy club brings those interested in music therapy together and provide opportunities for them to find expression, recognition, and a sharing of ideas and talents through swap shops and music-centered events. Within the context of the club, professional ideas are fostered among music therapy students. The club seeks to promote music therapy throughout the Molloy College campus and its surrounding community.<br><br>Though the music therapy club is a major-centered club, all are welcome to attend meetings and events!"
+  contact:
+    - "musictherapyclub@lions.molloy.edu"
+- displayName: "Investment Club"
+  id: "InvestmentClub"
+  description: "The Molloy Investment Club is an organization that provides both Undergraduate and Graduate students with a multi-faceted learning opportunity. Through this unique vehicle, students have the opportunity to compete in portfolio challenges, listen to and interact with real world professionals and learn portfolio management skills that they can put into practice in a student run portfolio. The club offers opportunities for a student of any level to further their knowledge on capital markets. Our frequent, interactive meetings, allow students to learn from one another as they attempt to manage a real time portfolio."
+  contact:
+    - "molloyinvestmentclub@gmail.com"
+- displayName: "National Student Speech Language Hearing Association (NSSLHA)"
+  id: "NSSLHA"
+  description: "This organization provides students with information concerning communication impairments and their treatment, to encourage contact between students and faculty and to sponsor community service."
+  contact:
+    - "NSSHLA@lions.molloy.edu"
+- displayName: "Not For Sale Club"
+  id: "NFS"
+  description: "The Not For Sale Club aims to increase awareness about the different types of human trafficking in the United States and around the world. We have fundraising events and are open to all majors. Let's put an end to modern day slavery!"
+  contact:
+    - "mbaldanza@lions.molloy.edu"
+- displayName: "People for Animal Welfare and Service (P.A.W.S.)"
+  id: "PAWS"
+  description: "P.A.W.S. is an organization created for people who love animals and want to work in fun, creative ways to raise awareness of animal rights. The purpose of this organization is to function as a charitable organization that will reach out to various animal shelters, rescues, and organizations.  The club will also serve to educate the public on animal rights and welfare."
+  contact:
+    - "jmcelroy@molloy.edu"
+- displayName: "Psychology and Counseling Club"
+  id: "PCC"
+  description: "Interested in joining the Psych Club? The Psychology and Counseling Club was established to obtain, share and distribute information concerning the fields of psychology and counseling to members of the Molloy community.<br><br>The Psychology and Counseling Club, or PCC, provides information concerning the fields of psychology and counseling to members of the Molloy community. As a united group, the PCC offers an environment where all who are interested are welcome to meet, learn, and participate in various psychology and counseling and community service activities.  Each month, we have a club meeting and a special event. Some of these events include de-stress and healthy thinking events, crepe sales, movie nights and participation in volunteer services such as the walks for NAMI and Autism Speaks. Other events are focused on helping students who are preparing to enter the fields of psychology and counseling. For example, we host a panel of professionals and a Molloy psychology alumni meet and greet, both of which allow students to learn from professionals and graduate students working in various fields of psychology and counseling. Overall, our goal is to educate the campus about different opportunities in psychology and counseling while forming a fellowship among students and faculty members."
+  contact:
+    - "psychologyclub@lions.molloy.edu"
+- displayName: "Respiratory Therapy Club"
+  id: "RespiratoryTherapyClub"
+  description: "The respiratory therapy club was established to organize and arrange various community service projects, educational functions, social activities and fundraisers, that all relate to and promote a greater knowledge of respiratory therapy."
+  contact:
+    - "jmcelroy@molloy.edu"
+- displayName: "Social Work Student Association (SWSA)"
+  id: "SWSA"
+  description: "Our club aims to develop qualities of “leadership through service,” foster social action projects and fund raising efforts in order to support and promote social and economic justice, and promote professional social work practice.<br><br>The Social Work Student Association will supply first hand information in regard to existing employment opportunities, social issues and current studies being conducted which relate to the field of Social Work. The organization will also provide additional educational opportunities for its members and a chance for students of the various education levels share ideas and information."
+  contact:
+    - "SocialWorkClub@lions.molloy.edu"
+- displayName: "South Asian Cultural Exchange (SACE)"
+  id: "SACE"
+  description: "The South Asian Cultural Exchange, SACE, provides an opportunity for the South Asian community at Molloy to come together and celebrate the diversity of South Asian culture while exploring the pluralistic outlooks as a modern South Asian society through events, activities and celebration of cultural traditions."
+  contact:
+    - "SACE@lions.molloy.edu"
+- displayName: "Ultimate Frisbee Club"
+  id: "UFC"
+  description: "The Ultimate Frisbee Club exists to have fun, encourage exercise and relax while tossing a disc around. The club gets together weekly, in nice weather, to socialize and play a little Frisbee."
+  contact:
+    - "frisbee@lions.molloy.edu"
+- displayName: "Union Hispana de Molloy"
+  id: "UnionHispanaDeMolloy"
+  description: "The purpose of this organization is to share and bring better understanding of the Hispanic culture to all students as well as provide service and/or assistance to members of the campus community. Members will learn to be leaders, to gain self-esteem, self-respect, and be able to create a unity and pride within the Hispanic community."
+  contact:
+    - "unionhispana@lions.molloy.edu"
+- displayName: "Youth for Christ"
+  id: "YouthForChrist"
+  description: "Youth for Christ's vision is to see that every young person in every people group in every nation has the opportunity to make an informed decision to be a follower of Jesus and to become a part of a local church."
+  contact:
+    - "YouthForChrist@lions.molloy.edu"
