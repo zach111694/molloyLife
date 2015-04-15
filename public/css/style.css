@@ -76,3 +76,7 @@ a.btn-molloy:after {
 a.btn-molloy:visited {
     color: #ffffff;
 }
+
+.thumbnail {
+    word-wrap: break-word;
+}
