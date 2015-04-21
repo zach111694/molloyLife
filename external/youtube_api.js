@@ -26,7 +26,6 @@ self = module.exports = {
                 } else {
                     callback(error);
                 }
-
             });
         //}
 

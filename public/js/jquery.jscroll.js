@@ -12,7 +12,7 @@
  * @author Philip Klauzinski
  * @requires jQuery v1.4.3+
  */
-(function($) {
+(function ($) {
 
     // Define the jscroll namespace and default settings
     $.jscroll = {
@@ -20,7 +20,7 @@
             debug: false,
             autoTrigger: true,
             autoTriggerUntil: false,
-            loadingHtml: '<small>Loading...</small>',
+            loadingHtml: '<img src="/images/loader.gif"/>',
             padding: 0,
             nextSelector: 'a:last',
             contentSelector: '',
@@ -30,11 +30,11 @@
     };
 
     // Constructor
-    var jScroll = function($e, options) {
+    var jScroll = function ($e, options) {
 
         // Private vars
         var _data = $e.data('jscroll'),
-            _userOptions = (typeof options === 'function') ? { callback: options } : options,
+            _userOptions = (typeof options === 'function') ? {callback: options} : options,
             _options = $.extend({}, $.jscroll.defaults, _userOptions, _data || {}),
             _isWindow = ($e.css('overflow-y') === 'visible'),
             _$next = $e.find(_options.nextSelector).first(),
@@ -126,7 +126,7 @@
                 if (_$body.height() <= _$window.height()) {
                     _observe();
                 }
-                _$scroll.unbind('.jscroll').bind('scroll.jscroll', function() {
+                _$scroll.unbind('.jscroll').bind('scroll.jscroll', function () {
                     return _observe();
                 });
                 if (_options.autoTriggerUntil > 0) {
@@ -134,7 +134,7 @@
                 }
             } else {
                 _$scroll.unbind('.jscroll');
-                $next.bind('click.jscroll', function() {
+                $next.bind('click.jscroll', function () {
                     _nextWrap($next);
                     _load();
                     return false;
@@ -152,8 +152,8 @@
                 .children('.jscroll-added').last()
                 .html('<div class="jscroll-loading">' + _options.loadingHtml + '</div>');
 
-            return $e.animate({scrollTop: $inner.outerHeight()}, 0, function() {
-                $inner.find('div.jscroll-added').last().load(data.nextHref, function(r, status, xhr) {
+            return $e.animate({scrollTop: $inner.outerHeight()}, 0, function () {
+                $inner.find('div.jscroll-added').last().load(data.nextHref, function (r, status, xhr) {
                     if (status === 'error') {
                         return _destroy();
                     }
@@ -197,8 +197,8 @@
     };
 
     // Define the jscroll plugin method and loop
-    $.fn.jscroll = function(m) {
-        return this.each(function() {
+    $.fn.jscroll = function (m) {
+        return this.each(function () {
             var $this = $(this),
                 data = $this.data('jscroll');
             // Instantiate jScroll on this element if it hasn't been already
