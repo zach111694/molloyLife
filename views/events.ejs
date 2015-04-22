@@ -7,24 +7,40 @@
 
 <%- include navbar.ejs %>
 
-<div class="container-fluid molloy-themed">
-
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-5">
-            <h1><%= title %></h1>
-
-            <p>Welcome to <%= title %></p>
-            <!--div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="http://www.flickr.com/photos/122352844@N04/15721605056/player/" width="640" height="480" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe> - See more at: http://www.theinfotechblog.com/2014/01/how-to-embed-flickr-slideshow-on-website.html#sthash.3M6iZ4Js.dpuf
-            </div-->
-            <p style>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus Pretium faucibus lectus quis justo, ac inceptos eleifend nullam
-                facilisi vel.Cubilia curae sed sollicitudin augue eget!Duis est Massa a porttitor
-                placerat rhoncus: curabitur felis magna vel hendrerit?Aenean etiam class ridiculus eget
-                Pulvinar volutpat dictumst potenti?
-            </p>
+        <div class="col-xs-12" style="text-align: center; padding: 4%">
+            <a class="btn btn-molloy" href="https://life.molloy.edu/EventRss/EventsIcal">
+                Subscribe to Calendar
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+            </a>
         </div>
+    </div>
+    <div class="row">
+        <% if (!locals.error) { %>
+        <!--link,title,description,enclosure-0-$-url -->
+            <% for(eventIndex in events) { %>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <h3><%= events[eventIndex]["title"]%></h3>
+
+                        <% if(events[eventIndex]["enclosure"]) { %>
+                            <img src=<%= events[eventIndex]["enclosure"][0]["$"]["url"] %>>
+                        <% } %>
+                        <div class="caption">
+                            <%- events[eventIndex]["description"]%>
+                            <p>
+                                <a href="<%= events[eventIndex]["link"] %>" class="btn btn-molloy btn-block" role="button" target="_blank">
+                                    More Info
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% } else { %>
+            <h2>Error getting articles!</h2>
+        <% } %>
     </div>
 </div>
 <%- include javascriptIncludes.ejs %>

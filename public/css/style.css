@@ -15,7 +15,17 @@ body {
     background-color: white;
     color: #000000;
     height: 100%;
-    margin-top: 50px;
+    padding-top: 50px;
+}
+
+.panel-title {
+    text-align: center;
+    font-weight: bold;
+
+}
+.panel-title:hover {
+    cursor: pointer;
+
 }
 
 html {
@@ -27,11 +37,11 @@ html {
 }
 
 #navImageContainer {
-    height: calc(100% - 50px);
-    background-image: url("/images/molloyLifeButtons.jpg");
+    height: 100%;
+    background-image: url("/images/OneColorMolloyLifePawSmall.png");
     background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: cover;
+    background-position: center center;
+    background-size: contain;
 }
 
 div.btn-group {
@@ -41,4 +51,32 @@ div.btn-group {
 a.btn {
     color: #000000;
     font-size: large;
+}
+
+/* Custom button matching Molloy colors */
+a.btn-molloy {
+    background-color: #A31919;
+    color: #ffffff;
+}
+
+a.btn-molloy:hover {
+    background-color: #851414;
+    color: #ffffff;
+}
+
+a.btn-molloy:active {
+    background-color: #691010;
+    color: #ffffff;
+}
+
+a.btn-molloy:after {
+    color: #ffffff;
+}
+
+a.btn-molloy:visited {
+    color: #ffffff;
+}
+
+.thumbnail {
+    word-wrap: break-word;
 }

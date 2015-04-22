@@ -1,0 +1,14 @@
+<% for(var v = 0; v <videos.length; v++) {
+    var currVid = videos[v];
+%>
+<h2><%= currVid["title"] %></h2>
+<!--a href="<%= currVid["url"]%>"><img class="img-responsive" src="<%= currVid["thumbnail"]%>"></a-->
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= currVid["id"]%>/" frameborder="0" allowfullscreen></iframe>
+</div>
+<% } if (nextPage){ %>
+
+<a href="<%= "/videoPage?pageToken="+nextPage %>">More Videos</a>
+<%}%>
+
+
