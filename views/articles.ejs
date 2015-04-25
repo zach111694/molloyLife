@@ -7,23 +7,24 @@
 
 <%- include navbar.ejs %>
 
-<div class="container-fluid molloy-themed">
+<div class="container-fluid molloy-themed" style = "overflow:auto;">
 
     <div class="row">
-        <div class="col-sm-5">
-            <h1><%= title %></h1>
+        <!--<div class="col-sm-5">-->
+            <h1 style="text-align: center"><%= title %></h1>
 
-            <p>Welcome to <%= title %></p>
-            <!--div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="http://www.flickr.com/photos/122352844@N04/15721605056/player/" width="640" height="480" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe> - See more at: http://www.theinfotechblog.com/2014/01/how-to-embed-flickr-slideshow-on-website.html#sthash.3M6iZ4Js.dpuf
-            </div-->
-            <p style>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus Pretium faucibus lectus quis justo, ac inceptos eleifend nullam
-                facilisi vel.Cubilia curae sed sollicitudin augue eget!Duis est Massa a porttitor
-                placerat rhoncus: curabitur felis magna vel hendrerit?Aenean etiam class ridiculus eget
-                Pulvinar volutpat dictumst potenti?
-            </p>
+            <div id = "articleContent" class="" style = "overflow:auto;">
+                <% articlesData.forEach(function(articleData) { %>
+                    <div style = "border:1px solid; text-align:center">
+                        <h2><a href = "http://www.molloy.edu/<%= articleData.storyLink %>"><%= articleData.headline.split("&#39;").join("'").split("&quot;").join('"') %></a></h2>
+                        <h3><time><%=articleData.date %></time></h3>
+                        <%if(articleData.imageSrc) { %>
+                            <p><img src = "http://www.molloy.edu/<%= articleData.imageSrc %>" style = "max-width:50%;"></p>
+                        <% } %>
+                        <p><%= articleData.previewText.split("&#39;").join("'").split("&quot;").join('"') %></p>
+                    </div>
+                    <% }); %>
+            </div>
         </div>
     </div>
 </div>
