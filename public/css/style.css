@@ -80,3 +80,7 @@ a.btn-molloy:visited {
 .thumbnail {
     word-wrap: break-word;
 }
+
+#tintup-container {
+    height: calc(100vh - 50px);
+}
