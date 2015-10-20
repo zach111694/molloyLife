@@ -1,7 +1,8 @@
 var https = require("https");
 var fs = require("fs");
 
-var REPEAT_COUNTER = 56; // Replace with number of pages or find last page by scraping
+//var REPEAT_COUNTER = 56; // Replace with number of pages or find last page by scraping
+var REPEAT_COUNTER = 62; // Replace with number of pages or find last page by scraping
 var counter = 0;
 var courses = [];
 var sharedRequestInfo;
@@ -138,7 +139,7 @@ function processResponseString(callback) {
 		var refreshKey = getStrBetweenAndEndIndex(responseStr, 0, '___BrowserRefresh', 'value="', '"')[0];
 		console.log("Repeating with " + refreshKey + "...");
 		console.log("Processing page " + counter);
-		sharedRequestInfo.body = '------FormBoundary\nContent-Disposition: form-data; name="__PORTLET"\n\npg0$V$ltrNav\n------FormBoundary\nContent-Disposition: form-data; name="_scriptManager_HiddenField"\n\n\n------FormBoundary\nContent-Disposition: form-data; name="__EVENTTARGET"\n\npg0$V$ltrNav\n------FormBoundary\nContent-Disposition: form-data; name="__EVENTARGUMENT"\n\n'+counter+'\n------FormBoundary\nContent-Disposition: form-data; name="___BrowserRefresh"\n\n'+refreshKey+'\n------FormBoundary\nContent-Disposition: form-data; name="userName"\n\n\n------FormBoundary\nContent-Disposition: form-data; name="password"\n\n\n------FormBoundary\nContent-Disposition: form-data; name="pg0$V$ddlTerm"\n\n2014;SP\n------FormBoundary\nContent-Disposition: form-data; name="pg0$V$ddlDivision"\n\n\n------FormBoundary--';
+		sharedRequestInfo.body = '------FormBoundary\nContent-Disposition: form-data; name="__PORTLET"\n\npg0$V$ltrNav\n------FormBoundary\nContent-Disposition: form-data; name="_scriptManager_HiddenField"\n\n\n------FormBoundary\nContent-Disposition: form-data; name="__EVENTTARGET"\n\npg0$V$ltrNav\n------FormBoundary\nContent-Disposition: form-data; name="__EVENTARGUMENT"\n\n'+counter+'\n------FormBoundary\nContent-Disposition: form-data; name="___BrowserRefresh"\n\n'+refreshKey+'\n------FormBoundary\nContent-Disposition: form-data; name="userName"\n\n\n------FormBoundary\nContent-Disposition: form-data; name="password"\n\n\n------FormBoundary\nContent-Disposition: form-data; name="pg0$V$ddlTerm"\n\n2015;SP\n------FormBoundary\nContent-Disposition: form-data; name="pg0$V$ddlDivision"\n\n\n------FormBoundary--';
 		sharedRequestInfo.headers["Content-Length"] = sharedRequestInfo.body.length;
 		getData(sharedRequestInfo, callback);
 	} else if(callback) {
