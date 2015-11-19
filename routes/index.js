@@ -15,6 +15,10 @@ router.get('/photos', function (req, res) {
     res.render('photos', {title: 'Photos'});
 });
 
+router.get('/forum', function (req, res) {
+    res.render('forum', {title: 'Forum'});
+});
+
 router.get('/videos', function (req, res) {
     youtubeAPI.getVideos(function(err, data){
         if(!err) {
@@ -114,6 +118,7 @@ router.get('/articles', function (req, res) {
     	res.render('articles', {title: 'Articles', articlesData: articlesData});
 	});
 });
+
 
 router.get('/clubs', function (req, res) {
     var theClubs = [];
